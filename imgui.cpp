@@ -11680,6 +11680,8 @@ static void NavUpdateWindowingHighlightWindow(int focus_change_dir)
 // Gamepad:  Hold Menu/Square (change focus/move/resize), Tap Menu/Square (toggle menu layer)
 static void ImGui::NavUpdateWindowing()
 {
+    //JOHNNYONFLAME: Don't allow tabbing out of windows.
+    #if 0
     ImGuiContext& g = *GImGui;
     ImGuiIO& io = g.IO;
 
@@ -11860,6 +11862,7 @@ static void ImGui::NavUpdateWindowing()
             NavRestoreHighlightAfterMove();
         }
     }
+    #endif
 }
 
 // Window has already passed the IsWindowNavFocusable()
